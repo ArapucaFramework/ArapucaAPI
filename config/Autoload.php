@@ -1,0 +1,10 @@
+<?php
+spl_autoload_register(function ($namespace){
+
+    $namespace = str_replace('\\',"/",$namespace );
+
+    $file = "./$namespace.php";
+    if (file_exists($file)) {
+        require $file;
+    }
+});
